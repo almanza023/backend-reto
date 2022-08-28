@@ -25,12 +25,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('login', [AuthController::class, 'authenticate']);
 Route::post('register', [AuthController::class, 'register']);
 
-Route::group(['middleware' => ['jwt.verify']], function() {
+//Route::group(['middleware' => ['jwt.verify']], function() {
 
     Route::apiResource('dependencias', DependenciaController::class);
     Route::apiResource('trabajadores', TrabajadorController::class);
     Route::apiResource('tareas', TareaController::class);
     Route::post('cambiarEstadoTarea', [TareaController::class, 'cambiarEstado']);
-});
+//});
 
 
